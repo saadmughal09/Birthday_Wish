@@ -1,0 +1,51 @@
+:root{
+  --ink:#0a0c12; --ink-2:#121622; --gold:#d6b25e; --gold-hi:#f3dc9a; --ivory:#f4ead3; --mute:#a9a395;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 700px at 50% -10%,#1b2236 0%,var(--ink) 60%) fixed;color:var(--ivory);font-family:var(--sans);line-height:1.7;min-height:100vh;overflow-x:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+
+.gold-btn{font:600 1rem var(--sans);letter-spacing:.04em;color:#1a1407;background:linear-gradient(135deg,var(--gold-hi),var(--gold) 55%,#b48a2e);border:0;border-radius:999px;padding:1rem 2.4rem;cursor:pointer;box-shadow:0 8px 30px rgba(214,178,94,.3);transition:transform .2s,box-shadow .2s}
+.gold-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(214,178,94,.45)}
+.gold-btn:active{transform:scale(.97)}
+
+#gate{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:var(--ink);transition:opacity .9s,visibility .9s}
+#gate.gone{opacity:0;visibility:hidden}
+.gate-note{font:italic 500 clamp(1.6rem,5vw,2.4rem) var(--serif);color:var(--gold-hi)}
+#open{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 14px rgba(214,178,94,.08),0 8px 40px rgba(214,178,94,.55)}}
+
+.music{position:fixed;top:1rem;right:1rem;z-index:30;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:rgba(10,12,18,.7);color:var(--gold-hi);font-size:1.3rem;cursor:pointer;backdrop-filter:blur(6px)}
+.music[aria-pressed="false"]{opacity:.5;text-decoration:line-through}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 8vw;max-width:1100px;margin:0 auto}
+.kicker{color:var(--gold);font-weight:600;margin-bottom:1rem}
+.hero h1{font:700 clamp(3.4rem,12vw,8.5rem)/.95 var(--serif);letter-spacing:-.01em;background:linear-gradient(120deg,var(--ivory) 20%,var(--gold-hi) 50%,var(--gold) 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 span{font-style:italic}
+.lead{max-width:34rem;margin-top:2rem;color:var(--mute);font-size:1.1rem}
+.scroll-hint{margin-top:3rem;color:var(--gold);text-decoration:none;font-weight:600;width:max-content;border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+h2{font:500 clamp(2rem,6vw,3.2rem) var(--serif);color:var(--gold-hi);text-align:center;margin-bottom:2rem}
+
+.gallery{padding:5rem 1rem;max-width:760px;margin:0 auto}
+.slider{position:relative;overflow:hidden;border:1px solid var(--gold);border-radius:6px;padding:10px;background:var(--ink-2);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.track{display:flex;transition:transform .7s cubic-bezier(.65,0,.25,1)}
+.slide{flex:0 0 100%;aspect-ratio:4/5;max-height:78vh}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px}
+.nav{position:absolute;top:50%;translate:0 -50%;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:rgba(10,12,18,.65);color:var(--gold-hi);font-size:2rem;line-height:1;cursor:pointer;backdrop-filter:blur(6px)}
+.prev{left:20px}.next{right:20px}
+.caption{text-align:center;font:italic 500 1.4rem var(--serif);color:var(--ivory);margin-top:1.2rem;min-height:2rem}
+.dots{display:flex;justify-content:center;gap:.7rem;margin-top:.8rem}
+.dots button{width:11px;height:11px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0}
+.dots button[aria-current="true"]{background:var(--gold)}
+
+.wish{padding:4rem 1.5rem 7rem;max-width:640px;margin:0 auto;text-align:center}
+#message p{font:500 1.35rem/1.8 var(--serif);margin-bottom:1.2rem}
+.wish .gold-btn{margin-top:1.5rem}
+.signoff{margin-top:2.5rem;font:italic 500 1.6rem var(--serif);color:var(--gold-hi)}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

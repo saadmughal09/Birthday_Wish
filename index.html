@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<section id="gate">
+  <p class="gate-note">Something is waiting for you</p>
+  <button id="open" class="gold-btn">Open your gift</button>
+</section>
+
+<main id="site" hidden>
+  <button id="music" class="music" aria-label="Toggle birthday music" aria-pressed="true">♪</button>
+
+  <header class="hero">
+    <p class="kicker" id="age-line"></p>
+    <h1>Happy<br>Birthday,<br><span id="name"></span></h1>
+    <p class="lead" id="lead"></p>
+    <a href="#gallery" class="scroll-hint">Scroll to see your moments</a>
+  </header>
+
+  <section id="gallery" class="gallery">
+    <h2>Your moments</h2>
+    <div class="slider" id="slider" tabindex="0" aria-roledescription="carousel">
+      <div class="track" id="track"></div>
+      <button class="nav prev" id="prev" aria-label="Previous photo">‹</button>
+      <button class="nav next" id="next" aria-label="Next photo">›</button>
+    </div>
+    <p class="caption" id="caption" aria-live="polite"></p>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <section class="wish">
+    <h2>A wish for you</h2>
+    <div id="message"></div>
+    <button id="makeWish" class="gold-btn">Make a wish</button>
+    <p class="signoff" id="signoff"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
